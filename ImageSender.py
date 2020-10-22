@@ -16,12 +16,12 @@ async def on_message(message):
     print('Message from {0.author}: {0.content}'.format(message))
 
     if message.content.startswith('$help'):
-        await message.channel.send("Currently available: $trap, $neko")
+        await message.channel.send("Currently available: $trap, $neko, $lolineko, $azurlane, $genshin, $girlsfrontline, $maids, $rena, $touhou")
     
     if message.content.startswith('$trap'):
-        images = os.listdir('./traps')
+        images = os.listdir('./Traps')
         image = images[random.randrange(len(images))]
-        await message.channel.send(file=discord.File(os.path.abspath('./traps') + "\\" + image))
+        await message.channel.send(file=discord.File(os.path.abspath('./Traps') + "\\" + image))
         
     if message.content.startswith('$lolineko'):
         images = os.listdir('./lolisnekos')
@@ -54,7 +54,7 @@ async def on_message(message):
         await message.channel.send(file=discord.File(os.path.abspath('./RuuyguuRena') + "\\" + image))
 
     if message.content.startswith('$touhou'):
-        images = os.listdir('./traps')
+        images = os.listdir('./Touhou')
         image = images[random.randrange(len(images))]
         await message.channel.send(file=discord.File(os.path.abspath('./Touhou') + "\\" + image))
 
