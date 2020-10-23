@@ -228,4 +228,4 @@ client.load_extension('jishaku')
     
     
 
-client.run('NzY4OTQwMTgyNzUyODU0MDU2.X5HxWQ.Ctk3tJYJxeuPWNw2uKnlEXDRQmc')
+client.run('token here')
