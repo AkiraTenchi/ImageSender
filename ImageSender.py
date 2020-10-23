@@ -210,19 +210,19 @@ async def touhou(ctx):
 client.load_extension('jishaku')
 
 
-#@commands.is_owner()
-#@client.command()
-#async def download(ctx, url = None):
-#    if not url: return await ctx.send('No url')
-#
-#
-#    message = await ctx.send('Started!')
-#
-#    async with ctx.typing():
-#
-#        task = await dh(c)
-#
-#        message.edit('Done!')
+@commands.is_owner()
+@client.command()
+async def download(ctx, url = None):
+    if not url: return await ctx.send('No url')
+
+
+    message = await ctx.send('Started!')
+
+    async with ctx.typing():
+
+        task = await dh(c)
+
+        message.edit('Done!')
 
     
     
