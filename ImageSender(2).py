@@ -324,5 +324,4 @@ async def downgel(ctx, arg, amn):
     
     
 
-client.run('NzY4OTQwMTgyNzUyODU0MDU2.X5HxWQ.ikMgtNuJlpq0chDSomTa-nWjeYY')
-#client.run('NzY5MjIzODgwOTUwMDIyMTQ0.X5L5kA.Bb1sHtF08mLtaBQk3KcM46MTIHE')
+client.run('token')
