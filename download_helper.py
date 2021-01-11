@@ -10,35 +10,33 @@ from functools import partial
 
 import discord
 
-def generateEmbed(progess, total):
-    if progres >= total:
-        return discord.Embed(title='Done', color=0x01f912)
-    else:
-        return discord.Embed(title=f'Downloaded {progess}/total')
 
+def generateEmbed(progess, total):
+    if progess >= total:
+        return discord.Embed(title='Done', color=0x01f912)
+    return discord.Embed(title=f'Downloaded {progess}/total')
 
 
 async def dowloadImages(url, message):
-        
+
     # download page for parsing
-    browser = webdriver.Firefox()  
-    browser.get(url)  
+    browser = webdriver.Firefox()
+    browser.get(url)
     label = browser.find_element_by_class_name('Zr3')
     print(label)
     for i in range(0, 50):
         label.send_keys(Keys.PAGE_DOWN)
         time.sleep(0.1)
-    html_source = browser.page_source  
+    html_source = browser.page_source
     browser.quit()
 
-    soup = bs(html_source,'html.parser')  
+    soup = bs(html_source, 'html.parser')
 
     # locate all elements with image tag
     image_tags = soup.findAll('img')
 
-
     print(len(image_tags))
-    #print(image_tags)
+    # print(image_tags)
 
     # create directory for model images
     if not os.path.exists('maids1'):
@@ -65,11 +63,9 @@ async def dowloadImages(url, message):
                     await message.edit(embed=generateEmbed(x, image_tags_amount))
                     x += 1
 
-           
-
-          
         except:
             pass
+
 
 async def download(bot, url, ctx):
     await bot.loop.create_task(dowloadImages(url=url, message=ctx))
